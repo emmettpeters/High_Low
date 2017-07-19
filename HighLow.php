@@ -16,12 +16,12 @@ do {
 
 		if ($numberInput < $numberRando){
 			fwrite(STDOUT, "Guess a higher number \n");
-			$numberInput = fgets((STDIN));
+			$numberInput = fgets(STDIN);
 			$count += 1;
 
 		} else if ($numberInput > $numberRando){
 			fwrite(STDOUT, "Guess a lower number \n");
-			$numberInput = fgets((STDIN));
+			$numberInput = fgets(STDIN);
 			$count += 1;
 
 		} else if ($numberInput == $numberRando){
