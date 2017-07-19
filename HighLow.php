@@ -1,38 +1,47 @@
 <?php
 
+if ($argc != 3 || !(is_numeric($argv[1])) || !(is_numeric($argv[2]))){
+	fwrite(STDOUT, "I Need 2 numbers for you to guess in-between fool!");
+	die;
+}
 
-$count = 1;
-$numberRando = mt_rand(0,100);
-echo $numberRando . PHP_EOL;
-fwrite(STDOUT,PHP_EOL);
+if ($argc == 3){
 
-do {
-	fwrite(STDOUT, 'Guess a number 0-100 : ');
-	$numberInput = trim(fgets(STDIN));
-	fwrite(STDOUT, "You have guessed $count times\n");
+	$numberRando = mt_rand($argv[1],$argv[2]);
 
-	if (is_numeric($numberInput)){
+	$count = 1;
+
+	echo $numberRando . PHP_EOL;
+
+	fwrite(STDOUT,PHP_EOL);
+
+	do {
+		fwrite(STDOUT, "Guess a number $argv[1] to $argv[2] : ");
+		$numberInput = trim(fgets(STDIN));
 		
+		fwrite(STDOUT, "You have guessed $count times\n");
 
-		if ($numberInput < $numberRando){
-			fwrite(STDOUT, "Guess a higher number \n");
+		if (is_numeric($numberInput)){
+			
 			$numberInput = fgets(STDIN);
 			$count += 1;
 
-		} else if ($numberInput > $numberRando){
-			fwrite(STDOUT, "Guess a lower number \n");
-			$numberInput = fgets(STDIN);
-			$count += 1;
+			if ($numberInput < $numberRando){
+				fwrite(STDOUT, "Guess a higher number \n");
 
-		} else if ($numberInput == $numberRando){
-			fwrite(STDOUT, 'YOU GOT IT!!');
+			} else if ($numberInput > $numberRando){
+				fwrite(STDOUT, "Guess a lower number \n");
+			
+
+			} else if ($numberInput == $numberRando){
+				fwrite(STDOUT, 'YOU GOT IT!!');
+			}
+
+		} else {
+			fwrite(STDOUT, 'NOT A NUMBER DUMMY');
 		}
+	} while ($numberInput != $numberRando);
 
-	} else {
-		fwrite(STDOUT, 'NOT A NUMBER DUMMY');
-	}
-} while ($numberInput != $numberRando);
-
-
+}
 
 
