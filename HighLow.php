@@ -18,7 +18,9 @@ if ($argc == 3){
 		}
 
 		$count += 1;
+
 		$numberInput =trim(fgets(STDIN));
+		
 		fwrite(STDOUT, "You have guessed $count times\n");
 
 		if (is_numeric($numberInput)){
