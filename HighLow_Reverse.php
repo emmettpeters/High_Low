@@ -21,12 +21,9 @@ if ($argc == 4){
 
 				fwrite(STDOUT, `say "HA HA HA HA,Silly Human, My guess is correct! I can guess 80000 times a second, you will never find a number I cant guess!"`);
 
-
 				fwrite(STDOUT, "Now it is your turn to start guessing! ill try and not fall asleep.\n");
 
-				fwrite(STDOUT, `say "Now it is your turn to start guessing! ill try and not fall asleep."`);
-
-				// $compChoice = 
+				fwrite(STDOUT, `say "Now it is your turn to start guessing! I will try and not fall asleep."`);
 
 			}
 
