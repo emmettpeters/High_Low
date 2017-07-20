@@ -1,6 +1,6 @@
 <?php
 
-if ($argc == 3){
+// if ($argc == 3){
 
 	$numberRando = mt_rand($argv[1],$argv[2]);
 	$count = 0;
@@ -42,6 +42,6 @@ if ($argc == 3){
 		}
 	} while ($numberInput != $numberRando);
 
-}
+// }
 
 
